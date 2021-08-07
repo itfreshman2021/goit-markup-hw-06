@@ -34,6 +34,7 @@ html {
   --modal-backdrope-bg-color: rgba(0, 0, 0, 0.2);
   --project-image-overley-color: rgba(33, 150, 243, 0.9);
   --input-form-footer-color: rgba(255, 255, 255, 0.6);
+  --input-form-modal-color: rgba(117, 117, 117, 0.5)
 
 }
 
@@ -753,6 +754,8 @@ line-height: 1.25;
 
 /* Модальне вікно  */
 
+
+
 .backdrop { 
   position: fixed;
   top: 0;
@@ -807,18 +810,217 @@ transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier
 
 .button.inmodal { 
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   top: 8px;
   right: 8px;
+  width: 30px ;
+  height: 30px; 
 
-  border: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
   
-  background: var(--white-color);
+  background-color: var(--white-color);
   
 }
 
+.modal-svg { 
+  
+  fill: var(--black-color)
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+}
+
+.button.inmodal:hover > .modal-svg,
+.button-list .item:focus > .modal-svg  { 
+
+  fill: var(--accent-color); }
 
 
+  
+  /*      Форма в модальному вікні     */
+
+
+.form-modal { 
+
+  padding: 40px;
+}
+
+.form-title { 
+margin-bottom: 20px;
+color: var(--title-text-color);
+
+font-size: 20px;
+line-height: 1.17;
+text-align: center;
+letter-spacing: 0.03em;
+
+ }
+.form-field { 
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+ .form-field:nth-child(1) { 
+   margin-top: 12px;
+ }
+ .form-field + .form-field { 
+   margin-top: 10px;
+ }
+.form-field:nth-child(4) { 
+   margin-bottom: 20px;
+ }
+
+ .form-label { 
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+ }
+ .form-input { 
+  
+   height: 40px; 
+   margin-top: 4px;
+   padding-left: 42px;
+   border: 1px solid;
+   border-color: rgba(33, 33, 33, 0.2);
+   border-radius: 4px;
+
+   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ .form-input.comment { 
+
+  position: relative;
+
+  height: 120px;
+  padding: 12px 16px;
+
+  
+ }
+
+ .form-input.comment::placeholder { 
+
+   position: absolute;
+   left: 16px;
+   top: 13px;
+
+   font-size: 12px;
+   line-height: 1.17;
+   letter-spacing: 0.01em;
+
+color: var(--input-form-modal-color);
+ }
+
+ .modal-svg-field { 
+
+  position: absolute;
+  left: 12px;
+  bottom: 11px;
+  fill: var(--title-text-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+
+ }
+
+ .form-input:focus { 
+  border: 1px solid;
+   border-color: var(--accent-color);
+   border-radius: 4px;
+ }
+
+ .form-input:focus + .modal-svg-field,
+ .form-input:not(:placeholder-shown) + .modal-svg-field { 
+   fill: var(--accent-color);
+ }
+
+ .form-checkbox { 
+  margin-left: 12px;
+  margin-bottom: 30px;
+ }
+
+.form-label-checkbox { 
+
+  display: inline-flex;
+  align-items: center;
+
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+ }
+.text-label-checkbox { 
+
+  margin-left: 3px;
+   color: var(--accent-color);
+   text-decoration: underline var(--accent-color);
+   
+ }
+
+
+ .form-input-checkbox.visually-hidden { 
+
+   position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+  
+ }
+
+.icon-checkbox { 
+    
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+
+  border: 1px solid var(--black-color);
+  border-radius: 2px;
+  background-color: var(--white-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+.form-input-checkbox:checked + .icon-checkbox { 
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  background-image: url("../images/iconcheck.svg");
+  background-size: contain;
+  background-origin: border-box;
+ } 
+
+ 
+ .button.submitmodal { 
+
+  width: 200px;
+  padding: 10px 55px 10px 56px;
+  border: 0;
+  border-radius: 4px;
+  margin-left: 124px;
+  margin-right: auto;
+
+  color: var(--white-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  
+
+  
+ }
 /* Сторінка Портфолио */
 
 
