@@ -896,19 +896,13 @@ letter-spacing: 0.03em;
 
  .form-input.comment { 
 
-  position: relative;
-
   height: 120px;
   padding: 12px 16px;
-
+  
   
  }
 
  .form-input.comment::placeholder { 
-
-   position: absolute;
-   left: 16px;
-   top: 13px;
 
    font-size: 12px;
    line-height: 1.17;
